@@ -20,6 +20,6 @@ export const Button = ({
     const checkButtonColor = STYLES.includes(buttonColor) ? buttonColor : COLOR[0]
 
     return(
-    <button className={`btn ${checkButtonStyle}${checkButtonSize} ${checkButtonColor}`} onClick={onclick} type={type}>{children}</button>
+    <button className={`btn ${checkButtonStyle} ${checkButtonSize} ${checkButtonColor}`} onClick={onclick} type={type}>{children}</button>
     )
 }
