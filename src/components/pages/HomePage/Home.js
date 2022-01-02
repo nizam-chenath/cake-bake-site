@@ -1,5 +1,5 @@
 import React from 'react'
-import { homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from './Data'
+import { homeObjFour, homeObjOne, homeObjThree, homeObjTwo } from '../../Data/Data'
 import Hero from '../Hero'
 import Pricing from '../Pricing';
 
