@@ -9,7 +9,9 @@ function Navbar() {
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
-    const handleClick = () => setClick(!click);
+    function handleClick() {
+        return setClick(!click);
+    }
     const closeMobileMenu = ()=> setClick(false);
 
     const showButton = () =>{
@@ -31,15 +33,15 @@ function Navbar() {
             <div className="navbar">
                  <div className="navbar-container container">
                      <Link to='/' className="navbar-logo" onClick={closeMobileMenu}>
-                         <GiCakeSlice className='navbar-icon'/>
-                         CakeBake
+                        <GiCakeSlice className='navbar-icon' alt="none"/>
+                         CakeBake 
                      </Link>
                      <div className="menu-icon" onClick={handleClick}>
                      {click ? <FaTimes className="fa-times"/> : <FaBars className="fa-bars"/>}
                      </div>
                      <ul className={click ? 'nav-menu active' : 'nav-menu'}>
                          <li className='nav-item'>
-                             <Link to="/Home" className="nav-links" onClick={closeMobileMenu}>Home</Link>
+                             <Link to="/" className="nav-links" onClick={closeMobileMenu}>Home</Link>
                          </li>
                          <li className='nav-item'>
                              <Link to="/products" className="nav-links" onClick={closeMobileMenu}>Products</Link>

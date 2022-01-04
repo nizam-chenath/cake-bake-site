@@ -50,6 +50,6 @@ export const homeObjTwo = {
       'The taste and design is mainly a best quality of a cake. If you bake with the quality you can get best review and also get huge bookings, so you can access it anytime.',
     buttonLabel: 'Sign Up Now',
     imgStart: 'start',
-    img: 'image 2.png',
+    img: 'image 3.png',
     alt: 'Vault'
   };
