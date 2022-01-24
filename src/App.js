@@ -7,8 +7,10 @@ import Services from './components/pages/Services/Services'
 import Products from './components/pages/Products/Products'
 import Signup from './components/pages/Signup/Signup'
 import Footer from './components/pages/Footer/Footer';
+import Items from './components/pages/Items/Items';
 
 function App() {
+  
   return (
     <Router>
       <Navbar/>
@@ -18,6 +20,7 @@ function App() {
          <Route path="/products"  component={Products}/>
          <Route path="/sign-up"  component={Signup}/>
        </Switch>
+       <Items/>
        <Footer/>
     </Router>
   );
