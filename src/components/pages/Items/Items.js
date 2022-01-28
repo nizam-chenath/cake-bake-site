@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 import ItemHeader from './ItemHeader';
 import './items.css'
+import Popup from './Popup';
 
 
 function Items() {
@@ -21,15 +22,23 @@ function Items() {
        
     },[])
 
-    console.log(menu)
+    console.log(menu);
+
+    
 
       let maxImages= 8;
 
     let menuImages = menu.map((item, index)=>{
+        const popup=()=>{
+            return(
+                <Popup popupImg={item.recipe.image} popupImgName={item.recipe.label}/>
+            )
+        }
+        
         if(index < maxImages){
             return (
             
-                <div className="items-img">
+                <div className="items-img" onClick={popup}>
     
                     <img src={item.recipe.image} alt=""/>
                     <h3>{item.recipe.label}</h3>
