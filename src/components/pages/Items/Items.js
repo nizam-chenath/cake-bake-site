@@ -7,7 +7,9 @@ import Popup from './Popup';
 function Items() {
     let [menu, setMenu] = useState([]);
     let [loading, setLoading] = useState(true);
-    let [query, setQuery] = useState("chicken")
+    let [query, setQuery] = useState("chicken");
+    let [showPopup, setShowPopup] = useState(false);
+    let [itemName, setItemName] = useState("")
    
 
  async function getMenu(){
@@ -24,23 +26,20 @@ function Items() {
 
     console.log(menu);
 
-    
+      const popup = () => setShowPopup(true)
+      const closePopup = () => setShowPopup(false)
 
       let maxImages= 8;
-
     let menuImages = menu.map((item, index)=>{
-        const popup=()=>{
-            return(
-                <Popup popupImg={item.recipe.image} popupImgName={item.recipe.label}/>
-            )
-        }
+      
         
         if(index < maxImages){
+        
             return (
             
-                <div className="items-img" onClick={popup}>
+                <div className="items-img" >
     
-                    <img src={item.recipe.image} alt=""/>
+                    <img src={item.recipe.image} alt="" onClick={popup}/>
                     <h3>{item.recipe.label}</h3>
                   
                 </div>
@@ -61,7 +60,8 @@ function Items() {
 
     return (
         <div>
-
+            {showPopup && <Popup menu = {menu}  close={closePopup}/> }
+          
             { !loading ? 
                 (<div className="section-item">
                 <h1>DISHES</h1>
